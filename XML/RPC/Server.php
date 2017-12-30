@@ -303,6 +303,11 @@ class XML_RPC_Server
     var $server_payload = '';
 
 
+    public function __construct($dispMap, $serviceNow = 1, $debug = 0)
+    {
+        $this->XML_RPC_Server($dispMap, $serviceNow, $debug);
+    }
+
     /**
      * Constructor for the XML_RPC_Server class
      *

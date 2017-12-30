@@ -696,6 +696,15 @@ class XML_RPC_Client extends XML_RPC_Base {
      */
     var $headers = '';
 
+    public function __construct($path, $server, $port = 0,
+        $proxy = '', $proxy_port = 0,
+        $proxy_user = '', $proxy_pass = '')
+    {
+        $this->XML_RPC_Client($path, $server, $port,
+            $proxy, $proxy_port,
+            $proxy_user, $proxy_pass
+        );
+    }
 
     /**
      * Sets the object's properties
@@ -1050,6 +1059,11 @@ class XML_RPC_Response extends XML_RPC_Base
     var $fs;
     var $hdrs;
 
+    public function __construct($val, $fcode = 0, $fstr = '')
+    {
+        $this->XML_RPC_Response($val, $fcode, $fstr);
+    }
+
     /**
      * @return void
      */
@@ -1194,6 +1208,11 @@ class XML_RPC_Message extends XML_RPC_Base
      */
     var $response_payload = '';
 
+
+    public function __construct($meth, $pars = 0)
+    {
+        $this->XML_RPC_Message($meth, $pars);
+    }
 
     /**
      * @return void
@@ -1553,6 +1572,11 @@ class XML_RPC_Value extends XML_RPC_Base
 {
     var $me = array();
     var $mytype = 0;
+
+    public function __construct($val = -1, $type = '')
+    {
+        $this->XML_RPC_Value($val, $type);
+    }
 
     /**
      * @return void
